@@ -1,0 +1,2 @@
+class PrimaryMusle < ApplicationRecord
+end
