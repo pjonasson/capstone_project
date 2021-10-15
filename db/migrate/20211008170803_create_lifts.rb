@@ -5,7 +5,7 @@ class CreateLifts < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :video_url
       t.string :image
-      t.integer :primary_muscles_id
+      t.integer :primary_muscle_id
 
       t.timestamps
     end

@@ -1,0 +1,2 @@
+class PrimaryMuscle < ApplicationRecord
+end
