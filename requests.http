@@ -1,22 +1,59 @@
-### Create User
-POST http://localhost:3000/users.json
-Content-Type: application/json
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2MzU1MzI5NDJ9.5RtF8V3SOUqFvYtGibPKRyvpG_23r9OsOL_TfK0Vp14
 
-{
+
+### Create User
+
+  POST http://localhost:3000/users.json
+  Content-Type: application/json
+
+  {
   "email": "test@test.com",
   "username": "test_guy",
   "first_name": "Test", 
   "last_name": "Test", 
   "password": "password", 
   "password_confirmation": "password" 
-}
+  }
 
+### User Index
+  get http://localhost:3000/users
+  Content-Type: application/json
 
+### User Show
+  get http://localhost:3000/users/1.json
+  Content-Type: application/json
+  Authorization: Bearer {{jwt}}
+
+  
 ### User Login
-POST http://localhost:3000/sessions.json
-Content-Type: application/json
+  POST http://localhost:3000/sessions.json
+  Content-Type: application/json
 
-{
+  {
   "email": "test@test.com",
   "password": "password"
-}
+  }
+
+
+### Create Workout
+
+  POST http://localhost:3000/workouts.json
+  Content-Type: application/json
+  Authorization: Bearer {{jwt}}
+
+  {
+  "number_of_lifts": 8
+  }
+### Lift_workout Index
+  get http://localhost:3000/lift_workouts.json
+  Content-Type: application/json
+
+### Primary Muscle Index
+  get http://localhost:3000/primary_muscles.json
+  Content-Type: application/json
+
+
+### Primary Muscle Show
+
+  get http://localhost:3000/primary_muscles/1.json
+  Content-Type: application/json
