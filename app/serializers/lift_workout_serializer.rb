@@ -1,10 +1,7 @@
 class LiftWorkoutSerializer < ActiveModel::Serializer
-  attributes :lift_name
+  attributes :id, :workout_id, :set1_reps, :weight1, :set2_reps, :weight2, :set3_reps, :weight3, :comments
 
-  # belongs_to :lift
+  belongs_to :lift
   # belongs_to :workout
 
-  def lift_name
-    object.lift.name
-  end
 end

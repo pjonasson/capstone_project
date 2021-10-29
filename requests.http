@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2MzU1MzI5NDJ9.5RtF8V3SOUqFvYtGibPKRyvpG_23r9OsOL_TfK0Vp14
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU2MDU0ODh9.A1XiYZibRMPxz6dsKa4hTmSTFw3zswuE55Y5jHr7Ny8
 
 
 ### Create User
@@ -30,7 +30,7 @@
   Content-Type: application/json
 
   {
-  "email": "test@test.com",
+  "email": "pjonasson@outlook.com",
   "password": "password"
   }
 

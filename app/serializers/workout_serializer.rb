@@ -3,7 +3,5 @@ class WorkoutSerializer < ActiveModel::Serializer
 
   belongs_to :user
   has_many :lift_workouts
-  has_many :lifts, through: :lift_workouts
-
-  
+  has_many :lifts
 end

@@ -5,4 +5,15 @@ class LiftWorkoutsController < ApplicationController
     lift_workout = LiftWorkout.all
     render json: lift_workout
   end
+
+  def show
+    lift_workout = LiftWorkout.find_by(id: params["id"])
+    render json: lift_workout
+  end
+
+  # def create
+  #   lift_workout = LiftWorkout.
+  # end
+
+  
 end

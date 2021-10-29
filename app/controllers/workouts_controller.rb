@@ -1,6 +1,11 @@
 class WorkoutsController < ApplicationController
   before_action :authenticate_user
 
+  def show
+    workout = Workout.find_by(id: params["id"])
+    render json: workout
+  end
+
   def create
     workout = Workout.new(
       user_id: current_user.id,
