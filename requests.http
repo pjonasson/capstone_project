@@ -63,4 +63,29 @@
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
+### Create Lift_workout
+  post http://localhost:3000/lift_workouts
+  Content-Type: application/json
+  Authorization: Bearer {{jwt}}
+
+  {
+    "lift_id": 1,
+    "workout_id": 4
+  }
+
+### Update Lift_workout
+  patch http://localhost:3000/lift_workouts/10.json
+  Content-Type: application/json
+  Authorization: Bearer {{jwt}}
+
+  {
+    "weight1": 225,
+    "weight2": 225,
+    "set3_reps": 11,
+    "weight3": 225,
+    "comments": "Add more weight next time. Did an extra rep."
+  }
+
+
+
   

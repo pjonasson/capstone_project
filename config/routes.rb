@@ -19,6 +19,6 @@ Rails.application.routes.draw do
 
   get "/lift_workouts" => "lift_workouts#index"
   get "/lift_workouts/:id" => "lift_workouts#show"
-  post "lift_workout" => "lift_workouts#create"
+  post "lift_workouts" => "lift_workouts#create"
   patch "lift_workouts/:id" => "lift_workouts#update"
 end
