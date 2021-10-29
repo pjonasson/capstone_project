@@ -12,4 +12,10 @@ class WorkoutsController < ApplicationController
       render json: { errors: workout.errors.full_message }
     end
   end
+
+  def destroy
+    workout = Workout.find_by(id: params["id"])
+    workout.destroy
+    render json: "Workout has been deleted"
+  end
 end

@@ -57,3 +57,10 @@
 
   get http://localhost:3000/primary_muscles/1.json
   Content-Type: application/json
+
+### Delete Workout
+  delete http://localhost:3000/workouts/6
+  Content-Type: application/json
+  Authorization: Bearer {{jwt}}
+
+  
