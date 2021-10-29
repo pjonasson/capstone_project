@@ -12,8 +12,9 @@ class LiftWorkoutsController < ApplicationController
   end
 
   def create
+    selected_muscle = Lift.where(primary_muscle_id: params["primary_muscle_id"]).sample.id
     lift_workout = LiftWorkout.new(
-      lift_id: params["lift_id"],
+      lift_id: selected_muscle,
       workout_id: params["workout_id"],
       set1_reps: 10,
       weight1: 0,
