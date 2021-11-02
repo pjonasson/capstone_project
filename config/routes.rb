@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get "/primary_muscles" => "primary_muscles#index"
   get "/primary_muscles/:id" => "primary_muscles#show"
 
+  get "/workouts" => "workouts#index"
   get "/workouts/:id" => "workouts#show"
+  get "/current_workout" => "workouts#user_workouts"
   post "/workouts" => "workouts#create"
   delete "/workouts/:id" => "workouts#destroy"
 

@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU2MDU0ODh9.A1XiYZibRMPxz6dsKa4hTmSTFw3zswuE55Y5jHr7Ny8
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU4OTk2NTh9.9ETMUky7t-1MB5dSM4RX0VGqfP3mZItz8MwGAZflOwo
 
 
 ### Create User
@@ -26,14 +26,23 @@
 
   
 ### User Login
+
   POST http://localhost:3000/sessions.json
   Content-Type: application/json
 
   {
-  "email": "pjonasson@outlook.com",
+  "email": "user1@test.com",
   "password": "password"
   }
 
+### Workout Index
+  get http://localhost:3000/workouts.json
+  Content-Type: application/json
+
+### Workout Current User Index
+  get http://localhost:3000/current_workout.json
+  Content-Type: application/json
+  Authorization: Bearer {{jwt}}
 
 ### Create Workout
 

@@ -11,6 +11,7 @@ class LiftWorkoutsController < ApplicationController
     render json: lift_workout
   end
 
+
   def create
     selected_muscle = Lift.where(primary_muscle_id: params["primary_muscle_id"]).sample.id
     lift_workout = LiftWorkout.new(

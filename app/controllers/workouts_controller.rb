@@ -1,5 +1,15 @@
 class WorkoutsController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user, except: [:index]
+
+  def index
+    workout = Workout.all
+    render json: workout
+  end
+
+  def user_workouts
+    workouts = Workout.where(user_id: current_user.id)
+    render json: workouts, include: "lift_workouts.lift"
+  end
 
   def show
     workout = Workout.find_by(id: params["id"])
