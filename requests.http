@@ -38,10 +38,23 @@
 ### Workout Index
   get http://localhost:3000/workouts.json
   Content-Type: application/json
+### Workout Update
+  patch http://localhost:3000/workouts/31.json
+  Content-Type: application/json
+  Authorization: Bearer {{jwt}}
 
+  {
+    "number_of_lifts": 10
+  } 
 ### Workout Current User Index
+
   get http://localhost:3000/current_workout.json
   Content-Type: application/json
+  Authorization: Bearer {{jwt}}
+
+### Workout Show
+  get http://localhost:3000/workouts/49.json
+   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
 ### Create Workout
@@ -53,6 +66,16 @@
   {
   "number_of_lifts": 6
   }
+
+### Copy Workout
+  post http://localhost:3000/workouts.json
+  Content-Type: application/json
+  Authorization: Bearer {{jwt}}
+
+  {
+    "workout_id": 49
+  }
+
 ### Lift_workout Index
   get http://localhost:3000/lift_workouts.json
   Content-Type: application/json
