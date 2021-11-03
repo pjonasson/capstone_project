@@ -1,5 +1,5 @@
 class WorkoutSerializer < ActiveModel::Serializer
-  attributes :id, :number_of_lifts, :lift_workouts
+  attributes :id, :lift_workouts, :created_at
 
   belongs_to :user
   has_many :lift_workouts

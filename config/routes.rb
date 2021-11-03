@@ -15,12 +15,13 @@ Rails.application.routes.draw do
 
   get "/workouts" => "workouts#index"
   get "/workouts/:id" => "workouts#show"
-  get "/current_workout" => "workouts#user_workouts"
   post "/workouts" => "workouts#create"
+  patch "/workouts/:id" => "workouts#update"
   delete "/workouts/:id" => "workouts#destroy"
 
   get "/lift_workouts" => "lift_workouts#index"
   get "/lift_workouts/:id" => "lift_workouts#show"
-  post "lift_workouts" => "lift_workouts#create"
-  patch "lift_workouts/:id" => "lift_workouts#update"
+  post "/lift_workouts" => "lift_workouts#create"
+  patch "/lift_workouts/:id" => "lift_workouts#update"
+  delete "/lift_workouts/:id" => "lift_workouts#destroy"
 end

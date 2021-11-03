@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
   has_many :workouts
   has_many :lift_workouts, through: :workouts
+
+  def last_workout
+    return workouts.last
+  end
 end

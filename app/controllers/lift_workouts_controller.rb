@@ -11,7 +11,6 @@ class LiftWorkoutsController < ApplicationController
     render json: lift_workout
   end
 
-
   def create
     selected_muscle = Lift.where(primary_muscle_id: params["primary_muscle_id"]).sample.id
     lift_workout = LiftWorkout.new(
@@ -48,5 +47,11 @@ class LiftWorkoutsController < ApplicationController
     else
       render json: { errors: lift_workout.error.full_messages }
     end
+  end
+
+  def destroy
+    user = LiftWorkout.find_by(id: params["id"])
+    user.destroy
+    render json: "Your lift has been deleted."
   end
 end
