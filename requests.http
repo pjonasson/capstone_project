@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzYwMzQ2MDV9.8nBy7txWIVab787GYm90j2VjA_AN-lKfZrAeLmlouUA
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzYxMjQ0NjJ9.RTwY5Fc8hMLtJGePTSfpzw3UWBS5S3SCZoOe7Fo6Vrs
 
 
 ### Create User
@@ -91,7 +91,7 @@
   Content-Type: application/json
 
 ### Delete Workout
-  delete http://localhost:3000/workouts/17
+  delete http://localhost:3000/workouts/10
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
