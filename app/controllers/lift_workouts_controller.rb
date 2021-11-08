@@ -12,22 +12,38 @@ class LiftWorkoutsController < ApplicationController
   end
 
   def create
-    selected_muscle = Lift.where(primary_muscle_id: params["primary_muscle_id"]).sample.id
-    lift_workout = LiftWorkout.new(
-      lift_id: selected_muscle,
-      workout_id: params["workout_id"],
-      set1_reps: 10,
-      weight1: 0,
-      set2_reps: 10,
-      weight2: 0,
-      set3_reps: 10,
-      weight3: 0,
-      comments: "",
-    )
-    if lift_workout.save
-      render json: lift_workout
+    if params[:lift_id]
+      selected_lift = Lift.find_by(id: params[:lift_id])
+      new_lift_workout = LiftWorkout.create(
+        lift_id: selected_lift.id,
+        workout_id: params[:workout_id],
+        set1_reps: 10,
+        weight1: 0,
+        set2_reps: 10,
+        weight2: 0,
+        set3_reps: 10,
+        weight3: 0,
+        comments: "",
+      )
+      render json: new_lift_workout
     else
-      render json: { errors: lift_workout.error.full_messages }
+      selected_muscle = Lift.where(primary_muscle_id: params["primary_muscle_id"]).sample.id
+      lift_workout = LiftWorkout.new(
+        lift_id: selected_muscle,
+        workout_id: params["workout_id"],
+        set1_reps: 10,
+        weight1: 0,
+        set2_reps: 10,
+        weight2: 0,
+        set3_reps: 10,
+        weight3: 0,
+        comments: "",
+      )
+      if lift_workout.save
+        render json: lift_workout
+      else
+        render json: { errors: lift_workout.error.full_messages }
+      end
     end
   end
 
