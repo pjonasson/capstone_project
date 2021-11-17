@@ -1,11 +1,11 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzYxMjQ0NjJ9.RTwY5Fc8hMLtJGePTSfpzw3UWBS5S3SCZoOe7Fo6Vrs
 
-@host = https://git.heroku.com/arcane-tor-51371.git
+@host = https://arcane-tor-51371.herokuapp.com/
 
 
 ### Create User
 
-  POST http://localhost:3000/users.json
+  POST {{host}}/users.json
   Content-Type: application/json
 
   {
@@ -18,18 +18,18 @@
   }
 
 ### User Index
-  get http://localhost:3000/users
+  get {{host}}/users
   Content-Type: application/json
 
 ### User Show
-  get http://localhost:3000/users/1.json
+  get {{host}}/users/1.json
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
   
 ### User Login
 
-  POST http://localhost:3000/sessions.json
+  POST {{host}}/sessions.json
   Content-Type: application/json
 
   {
@@ -38,10 +38,10 @@
   }
 
 ### Workout Index
-  get http://localhost:3000/workouts.json
+  get {{host}}/workouts.json
   Content-Type: application/json
 ### Workout Update
-  patch http://localhost:3000/workouts/31.json
+  patch {{host}}/workouts/31.json
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
@@ -50,18 +50,18 @@
   } 
 ### Workout Current User Index
 
-  get http://localhost:3000/current_workout.json
+  get {{host}}/current_workout.json
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
 ### Workout Show
-  get http://localhost:3000/workouts/49.json
+  get {{host}}/workouts/49.json
    Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
 ### Create Workout
 
-  POST http://localhost:3000/workouts.json
+  POST {{host}}/workouts.json
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
@@ -70,7 +70,7 @@
   }
 
 ### Copy Workout
-  post http://localhost:3000/workouts.json
+  post {{host}}/workouts.json
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
@@ -79,26 +79,26 @@
   }
 
 ### Lift_workout Index
-  get http://localhost:3000/lift_workouts.json
+  get {{host}}/lift_workouts.json
   Content-Type: application/json
 
 ### Primary Muscle Index
-  get http://localhost:3000/primary_muscles.json
+  get {{host}}/primary_muscles.json
   Content-Type: application/json
 
 
 ### Primary Muscle Show
 
-  get http://localhost:3000/primary_muscles/1.json
+  get {{host}}/primary_muscles/1.json
   Content-Type: application/json
 
 ### Delete Workout
-  delete http://localhost:3000/workouts/10
+  delete {{host}}/workouts/10
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
 ### Create Lift_workout
-  post http://localhost:3000/lift_workouts
+  post {{host}}/lift_workouts
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
@@ -109,7 +109,7 @@
 
 ### Update Lift_workout
 
-  patch http://localhost:3000/lift_workouts/10.json
+  patch {{host}}/lift_workouts/10.json
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
@@ -121,7 +121,7 @@
     "comments": "Add more weight next time. Did an extra rep."
   }
 ### Delete Lift_workout
-  delete http://localhost:3000/lift_workouts/13
+  delete {{host}}/lift_workouts/13
   Content-Type: application/json
   Authorization: Bearer {{jwt}}
 
