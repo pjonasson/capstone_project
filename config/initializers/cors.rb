@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "localhost:8080", "https://git.heroku.com/arcane-tor-51371.git"
+    origins "localhost:8080", "eloquent-mccarthy-e24d42.netlify.app"
 
     resource "*",
       headers: :any,
